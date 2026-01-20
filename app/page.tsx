@@ -28,8 +28,18 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
-        <h1>Discover Your Next Favorite Game</h1>
+      <div className="text-center w-3/4 space-y-15">
+        <h1 className="text-7xl font-bold">
+          <span className="">Discover Your Next</span>
+          <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+            {" "}
+            Favorite Game
+          </span>
+        </h1>
+        <h2 className="text-xl font-semibold">
+          Tell us what you love (and what you don't), and we'll find the perfect
+          board games for your next game night.
+        </h2>
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
