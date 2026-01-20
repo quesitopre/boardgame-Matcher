@@ -20,9 +20,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        <p>Browse Games </p>
-        <p> How It Works </p>
-        <p>About</p>
         {children}
         </body>
     </html>

@@ -5,6 +5,11 @@ export default function Header() {
           padding: "1rem",
           color: "#71a0a5", 
           fontFamily: "verdana"}}>
+            <nav>
+                <Link href="/"> Browse Games </Link>
+                <Link href="/"> How It Works </Link>
+                <Link href = "/"> About </Link>
+            </nav>
         </header>
     )
 }
