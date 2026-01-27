@@ -40,6 +40,14 @@ export default function Home() {
           Tell us what you love (and what you don't), and we'll find the perfect
           board games for your next game night.
         </h2>
+        <div>
+          <button className="text-xl border border-purple-500 rounded-xl p-3">
+            Start Rating Games
+          </button>
+          <button className="text-xl border border-purple-500 rounded-xl p-3">
+            How It Works
+          </button>
+        </div>
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
