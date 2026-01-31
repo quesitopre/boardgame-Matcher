@@ -40,13 +40,21 @@ export default function Home() {
           Tell us what you love (and what you don't), and we'll find the perfect
           board games for your next game night.
         </h2>
-        <div>
-          <button className="text-xl border border-purple-500 rounded-xl p-3">
+        <div className="mx-auto space-x-5">
+          <button className="bg-purple-500 text-white cursor-pointer text-lg rounded-xl py-3 px-5 shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl">
             Start Rating Games
           </button>
-          <button className="text-xl border border-purple-500 rounded-xl p-3">
+          <button className="bg-purple-500 text-white cursor-pointer text-lg rounded-xl py-3 px-5 shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl">
             How It Works
           </button>
+        </div>
+
+        <div className="flex justify-center space-x-10 text-lg">
+          <p>100+ Board Games</p>
+          <p>|</p>
+          <p>Smart Recommendations</p>
+          <p>|</p>
+          <p>Free To Use</p>
         </div>
       </div>
 
