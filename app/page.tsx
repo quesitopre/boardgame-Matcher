@@ -28,10 +28,69 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
-        <h1>Discover Your Next Favorite Game</h1>
-      </div>
+      <div className="text-center w-3/4 space-y-15">
+        <div className="flex justify-center gap-10">
+          {/** animate-bounce-subtle is a custom animation based off of tailwind's animate-bounce */}
+          <div className="bg-white w-25 p-2 rounded-xl animate-bounce-subtle">
+            <img src="dice.png" alt="Dice" />
+          </div>
+          <div
+            className="bg-white w-25 p-2 rounded-xl animate-bounce-subtle"
+            style={{ animationDelay: "0.8s" }}
+          >
+            <img src="board-game.png" alt="Board Game" />
+          </div>
+          <div
+            className="bg-white w-25 p-2 rounded-xl animate-bounce-subtle"
+            style={{ animationDelay: "0.6s" }}
+          >
+            <img src="chess-piece.png" alt="Pawn" />
+          </div>
+        </div>
 
+        <h1 className="text-7xl font-bold">
+          <span className="">Discover Your Next</span>
+          <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+            {" "}
+            Favorite Game
+          </span>
+        </h1>
+        <h2 className="text-xl font-semibold">
+          Tell us what you love (and what you don't), and we'll find the perfect
+          board games for your next game night.
+        </h2>
+        <div className="mx-auto space-x-5">
+          <button className="bg-purple-500 text-white cursor-pointer text-lg rounded-xl py-3 px-5 shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl">
+            Start Rating Games
+          </button>
+          <button className="bg-purple-500 text-white cursor-pointer text-lg rounded-xl py-3 px-5 shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl">
+            How It Works
+          </button>
+        </div>
+
+        <div className="flex justify-center space-x-7 text-2xl">
+          <p>
+            <span className="font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+              100+
+            </span>{" "}
+            Board Games
+          </p>
+          <p>|</p>
+          <p>
+            <span className="font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+              Smart
+            </span>{" "}
+            Recommendations
+          </p>
+          <p>|</p>
+          <p>
+            <span className="font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+              Free
+            </span>{" "}
+            To Use
+          </p>
+        </div>
+      </div>
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
