@@ -23,3 +23,19 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* Think of this as sheet music for animation */
+@keyframes bounce-subtle {
+  0%,
+  100% {
+    transform: translateY(0); /* Start and end: normal position */
+  }
+  50% {
+    transform: translateY(-5px); /* Middle: move up 5px */
+  }
+}
+
+/* Think of this as playing the music (how fast, how many times, etc.) */
+@utility animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
