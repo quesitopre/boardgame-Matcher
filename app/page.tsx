@@ -36,13 +36,13 @@ export default function Home() {
           </div>
           <div
             className="bg-white w-25 p-2 rounded-xl animate-bounce-subtle"
-            style={{ animationDelay: "0.8s" }}
+            style={{ animationDelay: "0.4s" }}
           >
             <img src="board-game.png" alt="Board Game" />
           </div>
           <div
             className="bg-white w-25 p-2 rounded-xl animate-bounce-subtle"
-            style={{ animationDelay: "0.6s" }}
+            style={{ animationDelay: "0.8s" }}
           >
             <img src="chess-piece.png" alt="Pawn" />
           </div>
