@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -60,9 +61,11 @@ export default function Home() {
           board games for your next game night.
         </h2>
         <div className="mx-auto space-x-5">
-          <button className="bg-purple-500 text-white cursor-pointer text-lg rounded-xl py-3 px-5 shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl">
-            Start Rating Games
-          </button>
+          <Link href="/rate">
+            <button className="bg-purple-500 text-white cursor-pointer text-lg rounded-xl py-3 px-5 shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl">
+              Start Rating Games
+            </button>
+          </Link>
           <button className="bg-purple-500 text-white cursor-pointer text-lg rounded-xl py-3 px-5 shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl">
             How It Works
           </button>
