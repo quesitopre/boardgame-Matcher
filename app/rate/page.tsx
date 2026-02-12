@@ -15,6 +15,10 @@ export default function Rate() {
             0 Disliked
           </p>
         </div>
+
+        <div className="w-full h-3 bg-gray-300 rounded-2xl">
+          <div className="w-3/4 h-3 bg-purple-500 rounded-2xl transition duration-300"></div>
+        </div>
       </div>
     </main>
   );
