@@ -5,24 +5,19 @@ export default function Rate() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="text-center space-y-10">
         <h1 className="text-4xl font-bold">Rate Some Games</h1>
-        <h2 className="text-xl text-white">
-          Rate at least 3 games to get recommendations.
-        </h2>
+        <h2 className="text-xl text-white">Rate at least 3 games to get recommendations.</h2>
 
         <div className="flex justify-center gap-10">
-          <p className="bg-purple-500 rounded-full px-5 py-2 text-xl">
-            0 Liked
-          </p>
-          <p className="bg-purple-500 rounded-full px-5 py-2 text-xl">
-            0 Disliked
-          </p>
+          <p className="bg-purple-500 rounded-full px-5 py-2 text-xl">0 Liked</p>
+          <p className="bg-purple-500 rounded-full px-5 py-2 text-xl">0 Disliked</p>
         </div>
 
         <div className="w-full h-3 bg-gray-300 rounded-2xl">
           <div className="w-3/4 h-3 bg-purple-500 rounded-2xl transition duration-300"></div>
         </div>
 
-        <GameCard />
+        <GameCard title="Catan" image="Catan-Cover.png" description="Settlement Game" />
+        <GameCard title="Codenames" image="Codenames-Cover.jpg" description="Party Game" />
       </div>
     </main>
   );
