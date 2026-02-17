@@ -1,12 +1,13 @@
-export default function GameCard({ title, image, players, description }: { title: string; image: string; players: string; description: string }) {
+export default function GameCard({ title, image, players, rating, description }: { title: string; image: string; players: string; rating: number;description: string }) {
   return (
     <main>
-      <div className="bg-red-100">
-        <div className="flex justify-around items-center">
-          <img src={image} className="flex-1 h-60 bg-amber-100" />
-          <div className="flex-1 text-left space-y-2">
-            <h2 className="bg-amber-500 h-fit w-fit text-2xl font-bold">{title}</h2>
-            <h3 className="bg-amber-500 h-fit w-fit text-lg">{players} Players</h3>
+      <div className="bg-gray-400 rounded-xl">
+        <div className="flex items-center">
+          <img src={image} className="flex-1 max-h-60 max-w-1/2 rounded-tl-xl" />
+          <div className="flex-1 text-center space-y-2">
+            <h2 className="text-2xl font-bold">{title}</h2>
+            <h3 className="text-lg"> {players}</h3>
+            <h3 className="text-lg">{rating}</h3>
           </div>
         </div>
         <p>{description}</p>
