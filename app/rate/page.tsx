@@ -16,8 +16,8 @@ export default function Rate() {
           <div className="w-3/4 h-3 bg-purple-500 rounded-2xl transition duration-300"></div>
         </div>
 
-        <GameCard title="Catan" image="Catan-Cover.png" description="Settlement Game" />
-        <GameCard title="Codenames" image="Codenames-Cover.jpg" description="Party Game" />
+        <GameCard title="Catan" image="Catan-Cover.png" players="3-4" description="Settlement Game" />
+        <GameCard title="Codenames" image="Codenames-Cover.jpg" players="4-12" description="Party Game" />
       </div>
     </main>
   );
