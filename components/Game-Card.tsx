@@ -13,8 +13,8 @@ export default function GameCard({ title, image, players, rating, description }:
         <p>{description}</p>
 
         <div className="flex gap-3 px-2">
-          <button className="flex-1 bg-purple-500 rounded-xl px-5 py-2 text-lg cursor-pointer">Not for me</button>
-          <button className="flex-1 bg-purple-500 rounded-xl px-5 py-2 text-lg cursor-pointer">Love it!</button>
+          <button className="flex-1 bg-purple-500 rounded-xl px-5 py-2 text-lg cursor-pointer hover:scale-110 duration-300 ease-in-out">Not for me</button>
+          <button className="flex-1 bg-purple-500 rounded-xl px-5 py-2 text-lg cursor-pointer hover:scale-110 duration-300 ease-in-out">Love it!</button>
         </div>
       </div>
     </main>
