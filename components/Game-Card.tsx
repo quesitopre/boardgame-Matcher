@@ -1,4 +1,6 @@
-export default function GameCard({ title, image, players, rating, description }: { title: string; image: string; players: string; rating: number;description: string }) {
+import TagButton from "./Tag_Button";
+
+export default function GameCard({ title, image, players, rating, weight, tag_1, tag_2, game_description }: { title: string; image: string; players: string; rating: number; weight: string; tag_1: string; tag_2: string; game_description: string }) {
   return (
     <main>
       <div className="bg-gray-400 rounded-xl">
@@ -10,7 +12,14 @@ export default function GameCard({ title, image, players, rating, description }:
             <h3 className="text-lg">{rating}</h3>
           </div>
         </div>
-        <p>{description}</p>
+
+        <div className="flex gap-2 px-2 mt-2">
+          <TagButton description={weight} />
+          <TagButton description={tag_1} />
+          <TagButton description={tag_2} />
+        </div>
+       
+        <p>{game_description}</p>
 
         <div className="flex gap-3 px-2">
           <button className="flex-1 bg-purple-500 rounded-xl px-5 py-2 text-lg cursor-pointer hover:scale-110 duration-300 ease-in-out">Not for me</button>
