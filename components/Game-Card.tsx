@@ -3,7 +3,7 @@ import TagButton from "./Tag_Button";
 export default function GameCard({ title, image, players, rating, weight, tag_1, tag_2, game_description }: { title: string; image: string; players: string; rating: number; weight: string; tag_1: string; tag_2: string; game_description: string }) {
   return (
     <main>
-      <div className="bg-gray-400 rounded-xl">
+      <div className="bg-gray-400 rounded-xl pb-3">
         <div className="flex items-center">
           <img src={image} className="flex-1 max-h-60 max-w-1/2 rounded-tl-xl" />
           <div className="flex-1 text-center space-y-2">
@@ -19,11 +19,11 @@ export default function GameCard({ title, image, players, rating, weight, tag_1,
           <TagButton description={tag_2} />
         </div>
        
-        <p>{game_description}</p>
+        <p className="text-left p-5">{game_description}</p>
 
         <div className="flex gap-3 px-2">
-          <button className="flex-1 bg-purple-500 rounded-xl px-5 py-2 text-lg cursor-pointer hover:scale-110 duration-300 ease-in-out">Not for me</button>
-          <button className="flex-1 bg-purple-500 rounded-xl px-5 py-2 text-lg cursor-pointer hover:scale-110 duration-300 ease-in-out">Love it!</button>
+          <button className="flex-1 bg-purple-500 rounded-xl px-5 py-2 text-lg cursor-pointer hover:scale-105 duration-300 ease-in-out">Not for me</button>
+          <button className="flex-1 bg-purple-500 rounded-xl px-5 py-2 text-lg cursor-pointer hover:scale-105 duration-300 ease-in-out">Love it!</button>
         </div>
       </div>
     </main>
