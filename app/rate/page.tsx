@@ -1,5 +1,5 @@
 import GameCard from "@/components/Game-Card";
-
+import GameCardSlide from "@/components/Game_Card_Slide";
 export default function Rate() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -18,6 +18,11 @@ export default function Rate() {
 
         <GameCard title="Catan" image="Catan-Cover.png" players="3-4" rating={5} weight="Medium" tag_1="Strategy" tag_2="Trade" game_description="Settlement Game" />
         <GameCard title="Codenames" image="Codenames-Cover.jpg" players="4-12" rating={4.5} weight="Light" tag_1="Words" tag_2="Teamwork" game_description="Party Game" />
+
+        <div className="mx-1 bg-amber-100">
+          <GameCardSlide/>
+        </div>
+      
       </div>
     </main>
   );
