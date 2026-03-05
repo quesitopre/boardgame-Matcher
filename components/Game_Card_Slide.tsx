@@ -9,21 +9,30 @@ const games = [
         {title: "King of Tokyo", image: "King_Of_Tokyo_Cover.webp", players: "3-6", rating: 4, weight: "Light", tag_1: "Dice", tag_2: "Fighting", game_description: "Prove your dominance by destroying Tokyou or by being the last monster left standing."}
     ]
 export default function GameCardSlide() {
-    const [currentIndex, setCurrrentIndex] = useState(0)
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [isLeaving, setIsLeaving] = useState(false)
+
+    const handleVote = () => {
+        setIsLeaving(true)
+        setTimeout(() => {
+            setCurrentIndex(prev => prev + 1)
+            setIsLeaving(false)
+        }, 400)
+    }
 
     if (currentIndex >= games.length) {
         return <div>No more games!</div>
     }
 
     return (
-        <div>
+        <div className="w-full">
             {/* Top card */}
-            <div>
-                <GameCard {...games[currentIndex]} />
+            <div className={`absolute z-10 ${isLeaving ? 'animate-fly-left': ''}`}>
+                <GameCard {...games[currentIndex]} onLike={handleVote} onDislike={handleVote} />
             </div>
 
             {/* Render next card underneath */}
-            <div>
+            <div className="relative z-0">
                 <GameCard {...games[currentIndex + 1]} />
             </div>
         </div>
