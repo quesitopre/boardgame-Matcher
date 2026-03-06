@@ -17,7 +17,7 @@ export default function GameCardSlide() {
         setTimeout(() => {
             setCurrentIndex(prev => prev + 1)
             setIsLeaving(false)
-        }, 400)
+        }, 800)
     }
 
     if (currentIndex >= games.length) {
@@ -25,16 +25,18 @@ export default function GameCardSlide() {
     }
 
     return (
-        <div className="w-full">
+        <div className="w-full flex justify-center">
             {/* Top card */}
             <div className={`absolute z-10 ${isLeaving ? 'animate-fly-left': ''}`}>
                 <GameCard {...games[currentIndex]} onLike={handleVote} onDislike={handleVote} />
             </div>
 
             {/* Render next card underneath */}
-            <div className="relative z-0">
-                <GameCard {...games[currentIndex + 1]} />
-            </div>
+            { currentIndex + 1 < games.length && 
+                <div className="relative z-0">
+                    <GameCard {...games[currentIndex + 1]} />
+                </div>
+            }
         </div>
     )
 }

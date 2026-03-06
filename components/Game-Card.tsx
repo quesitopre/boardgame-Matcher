@@ -2,7 +2,7 @@ import TagButton from "./Tag_Button";
 
 export default function GameCard({ title, image, players, rating, weight, tag_1, tag_2, game_description, onLike, onDislike }: { title: string; image: string; players: string; rating: number; weight: string; tag_1: string; tag_2: string; game_description: string; onLike?: () => void; onDislike?: () => void; }) {
   return (
-    <div className="bg-gray-400 rounded-xl pb-3">
+    <div className="w-175 bg-gray-400 rounded-xl pb-3">
       <div className="flex items-center">
         <img src={image} className="flex-1 max-h-60 max-w-1/2 rounded-tl-xl" />
         <div className="flex-1 text-center space-y-2">

@@ -2,8 +2,8 @@ import GameCard from "@/components/Game-Card";
 import GameCardSlide from "@/components/Game_Card_Slide";
 export default function Rate() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="text-center space-y-10">
+    <div className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="w-5/8 text-center space-y-10">
         <h1 className="text-4xl font-bold">Rate Some Games</h1>
         <h2 className="text-xl text-white">Rate at least 3 games to get recommendations.</h2>
 
@@ -16,14 +16,14 @@ export default function Rate() {
           <div className="w-3/4 h-3 bg-purple-500 rounded-2xl transition duration-300"></div>
         </div>
 
-        <GameCard title="Catan" image="Catan-Cover.png" players="3-4" rating={5} weight="Medium" tag_1="Strategy" tag_2="Trade" game_description="Settlement Game" />
-        <GameCard title="Codenames" image="Codenames-Cover.jpg" players="4-12" rating={4.5} weight="Light" tag_1="Words" tag_2="Teamwork" game_description="Party Game" />
+        {/* <GameCard title="Catan" image="Catan-Cover.png" players="3-4" rating={5} weight="Medium" tag_1="Strategy" tag_2="Trade" game_description="Settlement Game" />
+        <GameCard title="Codenames" image="Codenames-Cover.jpg" players="4-12" rating={4.5} weight="Light" tag_1="Words" tag_2="Teamwork" game_description="Party Game" /> */}
 
-        <div className="mx-1 bg-amber-100">
-          <GameCardSlide/>
-        </div>
+        {/* <div className=" bg-amber-100 w-full"> */}
+        <GameCardSlide />
+        {/* </div> */}
       
       </div>
-    </main>
+    </div>
   );
 }
