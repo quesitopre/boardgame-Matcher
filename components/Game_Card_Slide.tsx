@@ -20,23 +20,36 @@ export default function GameCardSlide() {
         }, 800)
     }
 
-    if (currentIndex >= games.length) {
-        return <div>No more games!</div>
-    }
+    // if (currentIndex >= games.length) {
+    //     return <div>No more games!</div>
+    // }
 
     return (
-        <div className="w-full flex justify-center">
-            {/* Top card */}
-            <div className={`absolute z-10 ${isLeaving ? 'animate-fly-left': ''}`}>
-                <GameCard {...games[currentIndex]} onLike={handleVote} onDislike={handleVote} />
+        <div className="w-full flex flex-col gap-10 items-center justify-center">
+            {/* Progress Bar render */}
+            <div className="w-full h-3 bg-gray-300 rounded-2xl ">
+                <div 
+                    className="h-3 bg-purple-500 rounded-2xl transition duration-300"
+                    style={{ width: `${(currentIndex / games.length) * 100}%`}}
+                ></div>
             </div>
 
-            {/* Render next card underneath */}
-            { currentIndex + 1 < games.length && 
-                <div className="relative z-0">
-                    <GameCard {...games[currentIndex + 1]} />
+            { currentIndex >= games.length ? <div>No more games!</div> : 
+                <div className="w-full relative flex justify-center bg-red-100">
+                    {/* Top card */}
+                    <div className={`absolute z-10 ${isLeaving ? 'animate-fly-left': ''}`}>
+                        <GameCard {...games[currentIndex]} onLike={handleVote} onDislike={handleVote} />
+                    </div>
+
+                    {/* Render next card underneath */}
+                    { currentIndex + 1 < games.length &&
+                        <div className="absolute z-0">
+                            <GameCard {...games[currentIndex + 1]} />
+                        </div>
+                    }
                 </div>
             }
+            
         </div>
     )
 }

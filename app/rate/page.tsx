@@ -12,9 +12,9 @@ export default function Rate() {
           <p className="bg-purple-500 rounded-full px-5 py-2 text-xl">0 Disliked</p>
         </div>
 
-        <div className="w-full h-3 bg-gray-300 rounded-2xl">
-          <div className="w-3/4 h-3 bg-purple-500 rounded-2xl transition duration-300"></div>
-        </div>
+        {/* <div className="w-full h-3 bg-gray-300 rounded-2xl">
+          <div className="w-[50%] h-3 bg-purple-500 rounded-2xl transition duration-300"></div>
+        </div> */}
 
         {/* <GameCard title="Catan" image="Catan-Cover.png" players="3-4" rating={5} weight="Medium" tag_1="Strategy" tag_2="Trade" game_description="Settlement Game" />
         <GameCard title="Codenames" image="Codenames-Cover.jpg" players="4-12" rating={4.5} weight="Light" tag_1="Words" tag_2="Teamwork" game_description="Party Game" /> */}
