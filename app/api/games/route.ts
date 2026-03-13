@@ -1,7 +1,7 @@
-export async function GET() {
-    const fetchGameData = async (gameId: number) => {
+// export async function GET() {
+//     const fetchGameData = async (gameId: number) => {
         
-    }
+//     }
 
-    return fetchGameData(13) // Catan's ID
-}
+//     return fetchGameData(13) // Catan's ID
+// }

@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import GameCard from "./Game-Card"
 
 // Not in function because the data doesn't change. If it's inside the function, React would recreate array in memory on every render which is wasteful.
@@ -19,6 +19,16 @@ export default function GameCardSlide() {
             setIsLeaving(false)
         }, 800)
     }
+
+    useEffect(() => {
+        const fetchGames = async () => {
+            const response = await fetch('https://boardgamegeek.com/xmlapi2/thing?id=13')
+            const text = await response.text()
+            console.log(text)   
+        }
+
+        fetchGames()
+    }, [])
 
     // if (currentIndex >= games.length) {
     //     return <div>No more games!</div>
