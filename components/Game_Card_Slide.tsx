@@ -11,8 +11,10 @@ const games = [
 export default function GameCardSlide() {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [isLeaving, setIsLeaving] = useState(false)
+    const [votes, setVotes] = useState({ liked: 0, disliked: 0 })
 
-    const handleVote = () => {
+    const handleVote = (type: 'liked' | 'disliked') => {
+        setVotes(prev => ({ ...prev, [type]: prev[type] + 1}))
         setIsLeaving(true)
         setTimeout(() => {
             setCurrentIndex(prev => prev + 1)
@@ -22,9 +24,9 @@ export default function GameCardSlide() {
 
     useEffect(() => {
         const fetchGames = async () => {
-            const response = await fetch('https://boardgamegeek.com/xmlapi2/thing?id=13')
-            const text = await response.text()
-            console.log(text)   
+            const response = await fetch('/api/games')
+            const data = await response.json()
+            console.log(data)
         }
 
         fetchGames()
@@ -36,6 +38,11 @@ export default function GameCardSlide() {
 
     return (
         <div className="w-full flex flex-col gap-10 items-center justify-center">
+            <div className="flex justify-center gap-10">
+                <p className="bg-purple-500 rounded-full px-5 py-2 text-xl">{votes.liked} Liked</p>
+                <p className="bg-purple-500 rounded-full px-5 py-2 text-xl">{votes.disliked} Disliked</p>
+            </div>
+            
             {/* Progress Bar render */}
             <div className="w-full h-3 bg-gray-300 rounded-2xl ">
                 <div 
@@ -48,7 +55,7 @@ export default function GameCardSlide() {
                 <div className="w-full relative flex justify-center bg-red-100">
                     {/* Top card */}
                     <div className={`absolute z-10 ${isLeaving ? 'animate-fly-left': ''}`}>
-                        <GameCard {...games[currentIndex]} onLike={handleVote} onDislike={handleVote} />
+                        <GameCard {...games[currentIndex]} onLike={() => handleVote('liked')} onDislike={() => handleVote('disliked')} />
                     </div>
 
                     {/* Render next card underneath */}
