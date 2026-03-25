@@ -39,3 +39,11 @@ body {
 @utility animate-bounce-subtle {
   animation: bounce-subtle 2s ease-in-out infinite;
 }
+
+@keyframes fly-left {
+  to { transform: translateX(-150%) rotate(-20deg); opacity: 0; }
+}
+
+.animate-fly-left {
+  animation: fly-left 2s ease-in-out forwards;
+}
