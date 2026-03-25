@@ -51,20 +51,28 @@ export default function GameCardSlide() {
                 ></div>
             </div>
 
-            { currentIndex >= games.length ? <div>No more games!</div> : 
-                <div className="w-full relative flex justify-center bg-red-100">
-                    {/* Top card */}
-                    <div className={`absolute z-10 ${isLeaving ? 'animate-fly-left': ''}`}>
-                        <GameCard {...games[currentIndex]} onLike={() => handleVote('liked')} onDislike={() => handleVote('disliked')} />
-                    </div>
-
-                    {/* Render next card underneath */}
-                    { currentIndex + 1 < games.length &&
-                        <div className="absolute z-0">
-                            <GameCard {...games[currentIndex + 1]} />
+            { currentIndex >= games.length 
+                ? 
+                    <div className="flex flex-col gap-5">
+                        No more games!
+                        <button className="bg-purple-500 text-white cursor-pointer text-lg rounded-xl py-3 px-5 shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl">
+                            Check out your recommendations!
+                        </button>
+                    </div> 
+                : 
+                    <div className="w-full relative flex justify-center bg-red-100">
+                        {/* Top card */}
+                        <div className={`absolute z-10 ${isLeaving ? 'animate-fly-left': ''}`}>
+                            <GameCard {...games[currentIndex]} onLike={() => handleVote('liked')} onDislike={() => handleVote('disliked')} />
                         </div>
-                    }
-                </div>
+
+                        {/* Render next card underneath */}
+                        { currentIndex + 1 < games.length &&
+                            <div className="absolute z-0">
+                                <GameCard {...games[currentIndex + 1]} />
+                            </div>
+                        }
+                    </div>
             }
             
         </div>
