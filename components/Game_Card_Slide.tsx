@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import GameCard from "./Game-Card"
+import { updateTagMap } from "@/lib/recommendations"
 
 // Not in function because the data doesn't change. If it's inside the function, React would recreate array in memory on every render which is wasteful.
 const games = [
@@ -13,6 +14,7 @@ export default function GameCardSlide() {
     const [isLeaving, setIsLeaving] = useState(false)
     const [votes, setVotes] = useState({ liked: 0, disliked: 0 })
 
+    // Handles vote and triggers slide animation.
     const handleVote = (type: 'liked' | 'disliked') => {
         setVotes(prev => ({ ...prev, [type]: prev[type] + 1}))
         setIsLeaving(true)
@@ -22,15 +24,15 @@ export default function GameCardSlide() {
         }, 800)
     }
 
-    useEffect(() => {
-        const fetchGames = async () => {
-            const response = await fetch('/api/games')
-            const data = await response.json()
-            console.log(data)
-        }
+    // useEffect(() => {
+    //     const fetchGames = async () => {
+    //         const response = await fetch('/api/games')
+    //         const data = await response.json()
+    //         console.log(data)
+    //     }
 
-        fetchGames()
-    }, [])
+    //     fetchGames()
+    // }, [])
 
     // if (currentIndex >= games.length) {
     //     return <div>No more games!</div>
