@@ -16,6 +16,9 @@ export default function GameCardSlide() {
 
     // Handles vote and triggers slide animation.
     const handleVote = (type: 'liked' | 'disliked') => {
+        if(type == 'liked') {
+            updateTagMap(games[currentIndex].tag_1, games[currentIndex].tag_2, games[currentIndex].weight)
+        }
         setVotes(prev => ({ ...prev, [type]: prev[type] + 1}))
         setIsLeaving(true)
         setTimeout(() => {
@@ -23,6 +26,11 @@ export default function GameCardSlide() {
             setIsLeaving(false)
         }, 800)
     }
+
+    // Clear local storage storage when component mounts, such as on page refreshes.
+    useEffect(() => {
+        localStorage.removeItem('tagMap')
+    }, [])
 
     // useEffect(() => {
     //     const fetchGames = async () => {
