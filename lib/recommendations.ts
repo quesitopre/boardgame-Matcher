@@ -1,3 +1,9 @@
+const recommended_games = [
+    {title:"Spots", image:"Catan-Cover.png", players:"1-4", rating:4, weight:"Light", tag_1:"Dice", tag_2:"Push Your Luck", game_description:"Roll and place dice to complete adorable dog cards."}, 
+    {title: "Decrypto", image:"Codenames-Cover.jpg", players: "3-8", rating: 4.5, weight: "Light", tag_1: "Words", tag_2: "Teamwork", game_description: "Decipher your opponents' code before they decipher yours. Don't get caught."}, 
+    {title: "Camel Up", image: "King_Of_Tokyo_Cover.webp", players: "3-8", rating: 4, weight: "Light", tag_1: "Racing", tag_2: "Betting", game_description: "Place your bets and bend the odds in this crazy camel-stacking race!"}
+]
+
 export function updateTagMap(tag1: string, tag2: string, tag3: string) {
     // Get existing hashmap saved in local storage. Get null if hashmap doesn't exist yet.
     const existing = JSON.parse(localStorage.getItem('tagMap') || '{}')
@@ -28,5 +34,14 @@ export function updateTagMap(tag1: string, tag2: string, tag3: string) {
     localStorage.setItem('tagMap', JSON.stringify(existing))
 }
 
-let game_dict = {}
+export function getRecommendedGames() {
+    // Get existing hashmap saved in local storage. Get null if hashmap doesn't exist yet. Using Record so highestTag function knows that a and b will be a number and can therefore subtract, and therefore order the hashmap properly.
+    const existing = JSON.parse(localStorage.getItem('tagMap') || '{}') as Record<string, number>
+
+    // Turns hashmap into an array of key value pairs. Sort tags in descending order. The subtraction of a and b are responsible for 
+    // determining whether it will be ascending or descending order. Currently grabbing first 5 results.
+    const highestTags = Object.entries(existing).sort((a, b) => b[1] - a[1]).slice(0, 5)
+
+    console.log(highestTags)
+}
 
