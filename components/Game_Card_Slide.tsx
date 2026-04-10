@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import GameCard from "./Game-Card"
-import { updateTagMap } from "@/lib/recommendations"
+import { updateTagMap, getRecommendedGames } from "@/lib/recommendations"
 
 // Not in function because the data doesn't change. If it's inside the function, React would recreate array in memory on every render which is wasteful.
 const games = [
@@ -25,6 +25,11 @@ export default function GameCardSlide() {
             setCurrentIndex(prev => prev + 1)
             setIsLeaving(false)
         }, 800)
+        
+        // Testing recommended games here
+        if( currentIndex == games.length - 1){
+            getRecommendedGames()
+        }
     }
 
     // Clear local storage storage when component mounts, such as on page refreshes.
