@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Link from "next/link";
 import GameCard from "./Game-Card"
 import { updateTagMap, getRecommendedGames } from "@/lib/recommendations"
 
@@ -70,9 +71,11 @@ export default function GameCardSlide() {
                 ? 
                     <div className="flex flex-col gap-5">
                         No more games!
-                        <button className="bg-purple-500 text-white cursor-pointer text-lg rounded-xl py-3 px-5 shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl">
-                            Check out your recommendations!
-                        </button>
+                        <Link href="/recommendation">
+                            <button className="bg-purple-500 text-white cursor-pointer text-lg rounded-xl py-3 px-5 shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl">
+                                Check out your recommendations!
+                            </button>
+                        </Link>
                     </div> 
                 : 
                     <div className="w-full relative flex justify-center bg-red-100">
