@@ -28,9 +28,9 @@ export default function GameCardSlide() {
         }, 800)
         
         // Testing recommended games here
-        if( currentIndex == games.length - 1){
-            getRecommendedGames()
-        }
+        // if( currentIndex == games.length - 1){
+        //     getRecommendedGames()
+        // }
     }
 
     // Clear local storage storage when component mounts, such as on page refreshes.
