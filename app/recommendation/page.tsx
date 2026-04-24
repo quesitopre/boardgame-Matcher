@@ -1,4 +1,6 @@
-import GameCard from "../components/Game-Card.tsx"
+"use client"
+
+import GameCard from "../../components/Game-Card"
 import { getRecommendedGames } from "@/lib/recommendations"
 
 export default function Recommendation(){
@@ -10,9 +12,9 @@ export default function Recommendation(){
             <h1 className="text-2xl">Games We Recommend!</h1>
 
             {
-                recommended_games.map((game) => {
-                    <GameCard />
-                })
+                recommended_games.map((game) => (
+                    <GameCard key={game.title} {...game}/>
+                ))
             }
         </div>
     );

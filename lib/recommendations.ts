@@ -40,8 +40,8 @@ export function getRecommendedGames() {
     const existing = JSON.parse(localStorage.getItem('tagMap') || '{}') as Record<string, number>
 
     // Turns hashmap into an array of key value pairs. Sort tags in descending order. The subtraction of a and b are responsible for 
-    // determining whether it will be ascending or descending order. Currently grabbing first 5 results.
-    const highestTags = Object.entries(existing).sort((a, b) => b[1] - a[1]).slice(0, 5)
+    // determining whether it will be ascending or descending order. Currently grabbing first 7 results.
+    const highestTags = Object.entries(existing).sort((a, b) => b[1] - a[1]).slice(0, 7)
 
     // Turn array of keys and values to an array of only keys
     const highestTagsKeys = highestTags.map(tag => tag[0])
